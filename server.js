@@ -4,7 +4,9 @@ const cors = require("cors");
 const { optimizeWarehouses } = require("./Optimization/optimizer");
 
 const app = express();
-const PORT = 3000;
+
+// Use Render's dynamic port, or default to 3000 locally
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -38,8 +40,9 @@ app.post("/api/optimize", (req, res) => {
 });
 
 // START SERVER
-const server = app.listen(PORT, "127.0.0.1", () => {
-  console.log(`backend running at http://localhost:${PORT}`);
+// Removed "127.0.0.1" host binding so Render can accept public incoming traffic
+const server = app.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
 });
 
 // Catch server errors
