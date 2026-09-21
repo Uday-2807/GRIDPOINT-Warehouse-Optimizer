@@ -16,4 +16,4 @@ https://gridpoint-warehouse-optimizer.onrender.com/
 - Interactive map visualization
 
 ### 👥 Team
-Built by ** Uday K & Vasamsetti Manoj Kumar ** 
+Built by **Uday K & Vasamsetti Manoj Kumar** 
