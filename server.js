@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
 
 // Health check
 app.get("/api/health", (req, res) => {
@@ -20,7 +21,7 @@ app.get("/api/health", (req, res) => {
 });
 
 // Optimization API
-app.post("/", (req, res) => {
+app.post("/api/optimize", (req, res) => {
   try {
     console.log("Optimization request received");
 
@@ -41,7 +42,7 @@ app.post("/", (req, res) => {
 
 // START SERVER
 // Removed "127.0.0.1" host binding so Render can accept public incoming traffic
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, "0.0.0.0", () => {
   console.log(`Backend running on port ${PORT}`);
 });
 

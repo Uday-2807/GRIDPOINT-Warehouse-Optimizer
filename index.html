@@ -3760,7 +3760,7 @@
 
             const responses = await Promise.all(
               counts.map(async (warehouseCount) => {
-                const response = await fetch("/", {
+                const response = await fetch("/api/optimize", {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ ...payloadBase, warehouse_count: warehouseCount }),
