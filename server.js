@@ -20,7 +20,7 @@ app.get("/api/health", (req, res) => {
 });
 
 // Optimization API
-app.post("/api/optimize", (req, res) => {
+app.post("/", (req, res) => {
   try {
     console.log("Optimization request received");
 
